@@ -3,15 +3,21 @@
 # Date:03/03/2026
 
 # Write your code here
-salary = float(input("Enter Basic Salary: "))
+basic = float(input())
 
-da = (salary * 70) / 100  # DA = 70% of BS
-ta = (salary * 30) / 100  # TA = 30% of BS
-hra = (salary * 10) / 100 # HRA = 10% of BS
+da = basic * 0.70
+ta = basic * 0.30
+hra = basic * 0.10
+gross = basic + da + ta + hra
+def fmt(x):
+    if x.is_integer():
+        return f"{x:.1f}"
+    else:
+        return f"{x:g}"
 
 print("Salary Details:")
-print("Basic Salary:   ", salary)
-print("DA (70%):       ", da)
-print("TA (30%):       ", ta)
-print("Gross Salary:   ", gross)
-print("HRA (10%):      ", hra)
+print(f"Basic Salary:    {fmt(basic)}")
+print(f"DA (70%):        {fmt(da)}")
+print(f"TA (30%):        {fmt(ta)}")
+print(f"HRA (10%):       {fmt(hra)}")
+print(f"Gross Salary:    {fmt(gross)}")
